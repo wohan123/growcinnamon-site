@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Cinnagrow Solutions</title>
+  <meta name="description" content="From bare land to a fully certified, producing Ceylon Cinnamon estate. Cinnagrow Solutions handles land preparation, planting, ongoing maintenance, and GAP certification.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .step-connector { position: relative; }
+    .step-connector::after {
+      content: '';
+      position: absolute;
+      left: 31px;
+      top: 64px;
+      bottom: -48px;
+      width: 2px;
+      background: repeating-linear-gradient(to bottom, #b45309 0px, #b45309 6px, transparent 6px, transparent 12px);
+    }
+    .step-connector:last-child::after { display: none; }
+    .service-tab { transition: all 0.2s ease; }
+    .service-tab.active { background: #92400e; color: white; border-color: #1e293b; }
+    .service-panel { display: none; }
+    .service-panel.active { display: block; }
+    input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #b45309; cursor: pointer; border: 2px solid #1e293b; }
+    input[type=range]::-webkit-slider-runnable-track { background: #e2e8f0; border-radius: 4px; height: 6px; }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 999;
+      width: 56px;
+      height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 2px solid #1e293b;
+    }
+    .whatsapp-float:hover { transform: scale(1.08); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+    @keyframes pulse-ring {
+      0% { transform: scale(1); opacity: 0.6; }
+      100% { transform: scale(1.5); opacity: 0; }
+    }
+    .whatsapp-pulse::before {
+      content: '';
+      position: absolute;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25D366;
+      animation: pulse-ring 2s ease-out infinite;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-amber-700 selection:text-white">
+
+  <!-- HEADER -->
+  <header class="bg-white border-b-2 border-slate-900 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <div class="flex-shrink-0 flex items-center">
+          <a href="index.html" class="text-2xl font-extrabold text-slate-900 tracking-tight uppercase">
+            Cinnagrow <span class="text-amber-700 font-medium">Solutions</span>
+          </a>
+        </div>
+        <nav class="hidden md:flex space-x-8">
+          <a href="index.html" class="text-slate-900 font-bold hover:text-amber-700 transition-colors">Home</a>
+          <a href="services.html" class="text-amber-700 font-bold border-b-2 border-amber-700">Services</a>
+          <a href="shop.html" class="text-slate-900 font-bold hover:text-amber-700 transition-colors">Shop</a>
+          <a href="education.html" class="text-slate-900 font-bold hover:text-amber-700 transition-colors">Education</a>
+          <a href="impact.html" class="text-slate-900 font-bold hover:text-amber-700 transition-colors">Our Impact</a>
+        </nav>
+        <div class="hidden md:flex items-center">
+          <a href="#quote" class="bg-amber-700 hover:bg-amber-600 text-white font-bold py-2 px-6 border-2 border-slate-900 transition-all duration-200 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] hover:shadow-[2px_2px_0px_0px_rgba(15,23,42,1)] hover:translate-x-[2px] hover:translate-y-[2px]">
+            Get a Quote
+          </a>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button type="button" class="text-slate-900 hover:text-amber-700 focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b-2 border-slate-900">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="index.html" class="block px-3 py-2 text-slate-900 font-bold">Home</a>
+        <a href="services.html" class="block px-3 py-2 text-amber-700 font-bold bg-slate-50 border-l-4 border-amber-700">Services</a>
+        <a href="shop.html" class="block px-3 py-2 text-slate-900 font-bold hover:text-amber-700">Shop</a>
+        <a href="education.html" class="block px-3 py-2 text-slate-900 font-bold hover:text-amber-700">Education</a>
+        <a href="impact.html" class="block px-3 py-2 text-slate-900 font-bold hover:text-amber-700">Our Impact</a>
+        <a href="#quote" class="block px-3 py-2 mt-4 text-center bg-amber-700 text-white font-bold border-2 border-slate-900 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)]">Get a Quote</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="bg-slate-900 py-16 md:py-24 border-b-4 border-amber-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 border border-slate-600 bg-slate-800 text-xs font-bold uppercase tracking-widest text-amber-500 mb-6">
+            <span class="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></span>
+            Full-Cycle Estate Services
+          </div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase tracking-tight leading-none">
+            We Turn <span class="text-amber-500">Bare Land</span><br/>Into a Producing<br/>Cinnamon Estate.
+          </h1>
+          <p class="mt-6 text-lg text-slate-300 font-medium leading-relaxed max-w-xl">
+            Hand us any land — jungle, paddy, overgrown — and we handle everything. Site clearing, soil preparation, planting, ongoing maintenance, and guiding you all the way to a GAP certificate.
+          </p>
+          <div class="flex flex-wrap gap-4 mt-8">
+            <a href="#services" class="bg-amber-700 hover:bg-amber-600 text-white font-black uppercase text-sm tracking-wider py-3 px-6 border-2 border-slate-900 transition-all duration-200 shadow-[4px_4px_0px_0px_rgba(180,83,9,0.5)] hover:translate-x-[2px] hover:translate-y-[2px]">
+              See All Services
+            </a>
+            <a href="#process" class="bg-transparent hover:bg-slate-800 text-white font-black uppercase text-sm tracking-wider py-3 px-6 border-2 border-slate-600 transition-all duration-200">
+              How It Works
+            </a>
+          </div>
+        </div>
+        <!-- Stats block -->
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-slate-800 border border-slate-700 p-6 text-center">
+            <span class="block text-4xl font-black text-amber-500 mb-1">50+</span>
+            <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Acres Engineered</span>
+          </div>
+          <div class="bg-slate-800 border border-slate-700 p-6 text-center">
+            <span class="block text-4xl font-black text-amber-500 mb-1">10k+</span>
+            <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Plants Established</span>
+          </div>
+          <div class="bg-slate-800 border border-slate-700 p-6 text-center">
+            <span class="block text-4xl font-black text-amber-500 mb-1">100%</span>
+            <span class="text-xs font-bold uppercase tracking-widest text-slate-400">GAP-Ready Process</span>
+          </div>
+          <div class="bg-amber-700 border-2 border-amber-900 p-6 text-center">
+            <span class="block text-4xl font-black text-white mb-1">2–3 yr</span>
+            <span class="text-xs font-bold uppercase tracking-widest text-amber-200">To First Harvest</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES TABS -->
+  <section id="services" class="py-16 md:py-24 bg-white border-b-2 border-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12">
+        <span class="text-xs font-black uppercase tracking-widest text-amber-700 block mb-3">What We Do</span>
+        <h2 class="text-3xl md:text-4xl font-black text-slate-900 uppercase tracking-tight">Our Service Streams</h2>
+        <p class="text-slate-600 font-medium mt-3 max-w-2xl">Four distinct services — from a single planting visit to a full multi-year estate management contract. Choose what fits your land and goals.</p>
+      </div>
+
+      <!-- Tab Buttons -->
+      <div class="flex flex-wrap gap-2 mb-8 border-b-2 border-slate-200 pb-4" id="service-tabs">
+        <button onclick="switchTab('land-dev')" class="service-tab active px-5 py-3 text-sm font-black uppercase tracking-wider border-2 border-slate-900 bg-amber-800 text-white shadow-[3px_3px_0px_0px_rgba(15,23,42,1)]" data-tab="land-dev">
+          01 — Land Development
+        </button>
+        <button onclick="switchTab('planting')" class="service-tab px-5 py-3 text-sm font-black uppercase tracking-wider border-2 border-slate-900 bg-white text-slate-900 shadow-[3px_3px_0px_0px_rgba(15,23,42,1)]" data-tab="planting">
+          02 — Planting
+        </button>
+        <button onclick="switchTab('maintenance')" class="service-tab px-5 py-3 text-sm font-black uppercase tracking-wider border-2 border-slate-900 bg-white text-slate-900 shadow-[3px_3px_0px_0px_rgba(15,23,42,1)]" data-tab="maintenance">
+          03 — Maintenance
+        </button>
+        <button onclick="switchTab('gap')" class="service-tab px-5 py-3 text-sm font-black uppercase tracking-wider border-2 border-slate-900 bg-white text-slate-900 shadow-[3px_3px_0px_0px_rgba(15,23,42,1)]" data-tab="gap">
+          04 — GAP &amp; Certification
+        </button>
+      </div>
+
+      <!-- PANEL 1: Land Development -->
+      <div id="panel-land-dev" class="service-panel active">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+          <div>
+            <span class="text-xs font-black uppercase tracking-widest text-amber-700 block mb-2">Service 01</span>
+            <h3 class="text-3xl font-black text-slate-900 uppercase tracking-tight mb-4">Land Preparation &amp; Development</h3>
+            <p class="text-slate-600 font-medium leading-relaxed mb-6">Whether it's a jungle plot, an abandoned paddy field, or sloped terrain, we prepare it completely for commercial cinnamon cultivation. We protect your topsoil, control water runoff, and lay the physical foundation for a long-term producing estate.</p>
+            <div class="space-y-4 mb-8">
+              <div class="flex gap-4 items-start p-4 bg-slate-50 border border-slate-200">
+                <div class="w-8 h-8 bg-amber-700 border border-slate-900 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                  <p class="font-bold text-slate-900 text-sm">Zero-Erosion Land Clearing</p>
+                  <p class="text-sm text-slate-600 mt-0.5">Mechanical brush clearing — no burning. Biomass is shredded back into the soil to preserve organic matter.</p>
+                </div>
+              </div>
+              <div class="flex gap-4 items-start p-4 bg-slate-50 border border-slate-200">
+                <div class="w-8 h-8 bg-amber-700 border border-slate-900 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                  <p class="font-bold text-slate-900 text-sm">Contour Drain Engineering</p>
+                  <p class="text-sm text-slate-600 mt-0.5">Physical contour trenches slow water velocity, turning destructive runoff into passive irrigation for the cinnamon root zone.</p>
+                </div>
+              </div>
+              <div class="flex gap-4 items-start p-4 bg-slate-50 border border-slate-200">
+                <div class="w-8 h-8 bg-amber-700 border border-slate-900 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                  <p class="font-bold text-slate-900 text-sm">Planting Position Marking &amp; Hole Digging</p>
+                  <p class="text-sm text-slate-600 mt-0.5">Optimal row spacing (4×3 ft flat / 4×2 ft sloped) marked and 1×1×1 ft holes dug — ready for planting day.</p>
+                </div>
+              </div>
+              <div class="flex gap-4 items-start p-4 bg-slate-50 border border-slate-200">
+                <div class="w-8 h-8 bg-amber-700 border border-slate-900 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                  <p class="font-bold text-slate-900 text-sm">Soil pH Testing &amp; Basal Fertilizer</p>
+                  <p class="text-sm text-slate-600 mt-0.5">Soil samples from at least 7 points per acre. Dolomite applied to reach the optimal pH 5.5–6.5. Eppawala Rock Phosphate applied per hole.</p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-amber-50 border-l-4 border-amber-700 p-4">
+              <p class="text-sm font-bold text-amber-900">Ideal for: Landowners with bare, jungle, or unused land who want a complete turnkey preparation before planting.</p>
+            </div>
+          </div>
+          <div class="bg-slate-100 border-2 border-slate-900 h-80 lg:h-full min-h-[320px] flex flex-col items-center justify-center relative overflow-hidden shadow-[6px_6px_0px_0px_rgba(15,23,42,1)]">
+            <div class="absolute inset-0 opacity-5 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+            <svg class="w-16 h-16 text-amber-700 mb-3 z-10 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-widest z-10">Land Development Photo</span>
+            <span class="text-xs text-slate-400 mt-1 z-10">[ Add site clearing / machinery image ]</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL 2: Planting -->
+      <div id="panel-planting" class="service-panel">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+          <div>
+            <span class="text-xs font-black uppercase tracking-widest text-amber-700 block mb-2">Service 02</span>
+            <h3 class="text-3xl font-black text-slate-900 uppercase tracking-tight mb-4">Plant Supply &amp; Field Establishment</h3>
+            <p class="text-slate-600 font-medium leading-relaxed mb-6">We supply high-yield Ceylon Cinnamon plants directly from our certified nursery and plant them into your prepared land. Available in two sizes to match your timeline and budget. We also handle infilling in mature cultivations where previous plants have died or underperformed.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+              <div class="bg-white border-2 border-slate-900 p-5 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)]">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-xs font-black uppercase tracking-widest text-amber-700">Small Plants</span>
+                  <span class="text-xs font-bold bg-slate-100 border border-slate-300 px-2 py-0.5 text-slate-600">4–6 months</span>
+                </div>
+                <p class="text-sm text-slate-600 mb-3">Nursery-grade seedlings, 15–25 cm height, 3–4 leaf whorls. Ideal for large-scale new plantations where cost per plant matters.</p>
+                <p class="text-amber-700 font-black">Rs. 150 / plant</p>
+              </div>
+              <div class="bg-amber-700 border-2 border-slate-900 p-5 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)]">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-xs font-black uppercase tracking-widest text-amber-200">Large Plants</span>
+                  <span class="text-xs font-bold bg-amber-800 border border-amber-900 px-2 py-0.5 text-amber-200">18+ months</span>
+                </div>
+                <p class="text-sm text-amber-100 mb-3">Fully hardened plants, 45–60 cm height, stronger root system. Better survival rate in difficult terrain. Faster to first harvest.</p>
+                <p class="text-white font-black">Contact for pricing</p>
+              </div>
+            </div>
+            <div class="space-y-3 mb-6">
+              <div class="flex gap-3 items-center">
+                <div class="w-5 h-5 bg-amber-700 border border-slate-900 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <span class="text-sm text-slate-700 font-medium">5 healthy plants per hole — Maha &amp; Yala season planting</span>
+              </div>
+              <div class="flex gap-3 items-center">
+                <div class="w-5 h-5 bg-amber-700 border border-slate-900 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <span class="text-sm text-slate-700 font-medium">Thinning at 3 months: retaining strongest plants per hole</span>
+              </div>
+              <div class="flex gap-3 items-center">
+                <div class="w-5 h-5 bg-amber-700 border border-slate-900 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <span class="text-sm text-slate-700 font-medium">Infilling service available for mature cultivations</span>
+              </div>
+              <div class="flex gap-3 items-center">
+                <div class="w-5 h-5 bg-amber-700 border border-slate-900 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <span class="text-sm text-slate-700 font-medium">Post-planting irrigation guidance for dry zone sites</span>
+              </div>
+            </div>
+            <div class="bg-amber-50 border-l-4 border-amber-700 p-4">
+              <p class="text-sm font-bold text-amber-900">Ideal for: Landowners whose land is prepared and need reliable, disease-free plants with professional field establishment — or farmers who need to fill gaps in an existing estate.</p>
+            </div>
+          </div>
+          <div class="bg-slate-100 border-2 border-slate-900 h-80 lg:h-full min-h-[320px] flex flex-col items-center justify-center relative overflow-hidden shadow-[6px_6px_0px_0px_rgba(15,23,42,1)]">
+            <div class="absolute inset-0 opacity-5 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+            <svg class="w-16 h-16 text-amber-700 mb-3 z-10 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m8.66-13l-.87.5M4.21 17.5l-.87.5M20.66 17.5l-.87-.5M4.21 6.5l-.87-.5M21 12h-1M4 12H3"/></svg>
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-widest z-10">Planting &amp; Nursery Photo</span>
+            <span class="text-xs text-slate-400 mt-1 z-10">[ Add nursery / field planting image ]</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL 3: Maintenance -->
+      <div id="panel-maintenance" class="service-panel">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+          <div>
+            <span class="text-xs font-black uppercase tracking-widest text-amber-700 block mb-2">Service 03</span>
+            <h3 class="text-3xl font-black text-slate-900 uppercase tracking-tight mb-4">Ongoing Field Maintenance</h3>
+            <p class="text-slate-600 font-medium leading-relaxed mb-6">Cinnamon cultivation requires consistent, expert management between planting and harvest. Our maintenance contracts ensure your estate stays disease-free, well-nourished, and growing optimally — so you don't have to manage it yourself.</p>
+            <div class="space-y-4 mb-8">
+              <div class="flex gap-4 items-start p-4 bg-slate-50 border border-slate-200">
+                <div class="w-8 h-8 bg-amber-700 border border-slate-900 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                  <p class="font-bold text-slate-900 text-sm">Precision Fertilizer Applications</p>
+                  <p class="text-sm text-slate-600 mt-0.5">Targeted N:P:K 23:7:15 applications (900 kg/hectare/year) split into scheduled doses. Integrated with organic compost from cinnamon leaf and scraping waste.</p>
+                </div>
+              </div>
+              <div class="flex gap-4 items-start p-4 bg-slate-50 border border-slate-200">
+                <div class="w-8 h-8 bg-amber-700 border border-slate-900 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                  <p class="font-bold text-slate-900 text-sm">Weed Management</p>
+                  <p class="text-sm text-slate-600 mt-0.5">Periodic slashing of above-ground weed growth using grass-cutting machinery. Manual removal within 1-foot radius of each bush. No long-term chemical weedicide use.</p>
+                </div>
+              </div>
+              <div class="flex gap-4 items-start p-4 bg-slate-50 border border-slate-200">
+                <div class="w-8 h-8 bg-amber-700 border border-slate-900 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                  <p class="font-bold text-slate-900 text-sm">Pruning &amp; Bush Training</p>
+                  <p class="text-sm text-slate-600 mt-0.5">Coppicing at correct intervals to remove diseased/cross branches. Stem training to keep growth upright for easier harvesting. First pruning at 18 months, second at 24 months.</p>
+                </div>
+              </div>
+              <div class="flex gap-4 items-start p-4 bg-slate-50 border border-slate-200">
+                <div class="w-8 h-8 bg-amber-700 border border-slate-900 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                  <p class="font-bold text-slate-900 text-sm">Disease &amp; Pest Monitoring</p>
+                  <p class="text-sm text-slate-600 mt-0.5">Regular field walks to detect Rough Bark Disease, Leaf Blight, Pink Stem Borer, and other key threats — with fast targeted treatment before spread occurs.</p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-amber-50 border-l-4 border-amber-700 p-4">
+              <p class="text-sm font-bold text-amber-900">Ideal for: Landowners and investors who want a hands-off estate that is professionally managed from planting through to first harvest and beyond.</p>
+            </div>
+          </div>
+          <div class="bg-slate-100 border-2 border-slate-900 h-80 lg:h-full min-h-[320px] flex flex-col items-center justify-center relative overflow-hidden shadow-[6px_6px_0px_0px_rgba(15,23,42,1)]">
+            <div class="absolute inset-0 opacity-5 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+            <svg class="w-16 h-16 text-amber-700 mb-3 z-10 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-widest z-10">Maintenance Photo</span>
+            <span class="text-xs text-slate-400 mt-1 z-10">[ Add fertilizer / weed management image ]</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL 4: GAP -->
+      <div id="panel-gap" class="service-panel">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+          <div>
+            <span class="text-xs font-black uppercase tracking-widest text-amber-700 block mb-2">Service 04</span>
+            <h3 class="text-3xl font-black text-slate-900 uppercase tracking-tight mb-4">GAP Certification &amp; Recognition</h3>
+            <p class="text-slate-600 font-medium leading-relaxed mb-6">A GAP (Good Agricultural Practices) certificate is the gold standard that unlocks premium export markets, higher buyer prices, and government recognition. We guide your entire estate through the documentation, process compliance, and inspection requirements needed to earn it.</p>
+            <div class="space-y-4 mb-8">
+              <div class="flex gap-4 items-start p-4 bg-slate-50 border border-slate-200">
+                <div class="w-8 h-8 bg-amber-700 border border-slate-900 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                  <p class="font-bold text-slate-900 text-sm">Farm Record &amp; Data Management</p>
+                  <p class="text-sm text-slate-600 mt-0.5">We implement the record-keeping systems required by GAP — inputs used, application dates, soil test results, harvest logs — to make your estate inspection-ready.</p>
+                </div>
+              </div>
+              <div class="flex gap-4 items-start p-4 bg-slate-50 border border-slate-200">
+                <div class="w-8 h-8 bg-amber-700 border border-slate-900 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                  <p class="font-bold text-slate-900 text-sm">SLS 81:2021 &amp; GI Standard Alignment</p>
+                  <p class="text-sm text-slate-600 mt-0.5">Sri Lanka's cinnamon standard requires max 14% moisture, max 5% total ash, min 1.0ml/100g volatile oil. We ensure your cultivation and post-harvest handling meets these benchmarks.</p>
+                </div>
+              </div>
+              <div class="flex gap-4 items-start p-4 bg-slate-50 border border-slate-200">
+                <div class="w-8 h-8 bg-amber-700 border border-slate-900 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                  <p class="font-bold text-slate-900 text-sm">Organic Pathway Consultation</p>
+                  <p class="text-sm text-slate-600 mt-0.5">If organic certification is your goal, we structure the entire cultivation from day one using integrated nutrient management — Gliricidia, compost, vermicompost, biochar — to keep your estate chemical-residue free.</p>
+                </div>
+              </div>
+              <div class="flex gap-4 items-start p-4 bg-slate-50 border border-slate-200">
+                <div class="w-8 h-8 bg-amber-700 border border-slate-900 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                  <p class="font-bold text-slate-900 text-sm">Geographical Indication (GI) Positioning</p>
+                  <p class="text-sm text-slate-600 mt-0.5">Sri Lanka holds the CCGI 2022 GI certificate for Ceylon Cinnamon. We help your estate documentation align with GI traceability requirements for premium export positioning.</p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-amber-50 border-l-4 border-amber-700 p-4">
+              <p class="text-sm font-bold text-amber-900">Ideal for: Estate owners targeting export markets, agri-investors requiring traceable supply chains, and farmers wanting to command a premium price for certified Ceylon Cinnamon.</p>
+            </div>
+          </div>
+          <div class="bg-slate-100 border-2 border-slate-900 h-80 lg:h-full min-h-[320px] flex flex-col items-center justify-center relative overflow-hidden shadow-[6px_6px_0px_0px_rgba(15,23,42,1)]">
+            <div class="absolute inset-0 opacity-5 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+            <svg class="w-16 h-16 text-amber-700 mb-3 z-10 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-widest z-10">Certification Photo</span>
+            <span class="text-xs text-slate-400 mt-1 z-10">[ Add certificate / documentation image ]</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS — PROCESS FLOW -->
+  <section id="process" class="py-16 md:py-24 bg-slate-900 border-b-4 border-amber-700">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12 text-center">
+        <span class="text-xs font-black uppercase tracking-widest text-amber-500 block mb-3">The Journey</span>
+        <h2 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">From Bare Land to First Harvest</h2>
+        <p class="text-slate-400 font-medium mt-3 max-w-xl mx-auto">Here is exactly what happens after you contact us — no surprises.</p>
+      </div>
+
+      <div class="space-y-0 relative">
+        <!-- Vertical line -->
+        <div class="absolute left-8 top-8 bottom-8 w-px border-l-2 border-dashed border-amber-800 hidden md:block"></div>
+
+        <!-- Step 1 -->
+        <div class="flex gap-6 items-start mb-12 md:mb-16 relative">
+          <div class="w-16 h-16 bg-amber-700 border-2 border-amber-900 flex items-center justify-center flex-shrink-0 font-black text-white text-xl z-10">01</div>
+          <div class="bg-slate-800 border border-slate-700 p-6 flex-1 shadow-[4px_4px_0px_0px_rgba(180,83,9,0.3)]">
+            <div class="flex items-center justify-between mb-2 flex-wrap gap-2">
+              <h3 class="text-lg font-black text-white uppercase tracking-tight">Site Visit &amp; Consultation</h3>
+              <span class="text-xs font-bold bg-amber-900 text-amber-300 px-2 py-1 border border-amber-800">Week 1</span>
+            </div>
+            <p class="text-slate-400 text-sm leading-relaxed">Our team visits your land. We assess terrain slope, soil depth, drainage, existing vegetation, and access. You receive an honest recommendation on the best service package for your specific plot — and a cost estimate.</p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="flex gap-6 items-start mb-12 md:mb-16 relative">
+          <div class="w-16 h-16 bg-amber-700 border-2 border-amber-900 flex items-center justify-center flex-shrink-0 font-black text-white text-xl z-10">02</div>
+          <div class="bg-slate-800 border border-slate-700 p-6 flex-1 shadow-[4px_4px_0px_0px_rgba(180,83,9,0.3)]">
+            <div class="flex items-center justify-between mb-2 flex-wrap gap-2">
+              <h3 class="text-lg font-black text-white uppercase tracking-tight">Land Preparation</h3>
+              <span class="text-xs font-bold bg-amber-900 text-amber-300 px-2 py-1 border border-amber-800">Weeks 2–6</span>
+            </div>
+            <p class="text-slate-400 text-sm leading-relaxed">Clearing, drain installation, soil testing, Dolomite correction, planting position marking, and hole digging. The land is fully ready for plants by the end of this phase.</p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="flex gap-6 items-start mb-12 md:mb-16 relative">
+          <div class="w-16 h-16 bg-amber-700 border-2 border-amber-900 flex items-center justify-center flex-shrink-0 font-black text-white text-xl z-10">03</div>
+          <div class="bg-slate-800 border border-slate-700 p-6 flex-1 shadow-[4px_4px_0px_0px_rgba(180,83,9,0.3)]">
+            <div class="flex items-center justify-between mb-2 flex-wrap gap-2">
+              <h3 class="text-lg font-black text-white uppercase tracking-tight">Planting &amp; Establishment</h3>
+              <span class="text-xs font-bold bg-amber-900 text-amber-300 px-2 py-1 border border-amber-800">Months 2–3</span>
+            </div>
+            <p class="text-slate-400 text-sm leading-relaxed">We supply and plant nursery-grade cinnamon plants timed to the Maha or Yala monsoon onset. Basal fertilizer applied per hole. Thinning at 3 months to retain the strongest plants.</p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="flex gap-6 items-start mb-12 md:mb-16 relative">
+          <div class="w-16 h-16 bg-amber-700 border-2 border-amber-900 flex items-center justify-center flex-shrink-0 font-black text-white text-xl z-10">04</div>
+          <div class="bg-slate-800 border border-slate-700 p-6 flex-1 shadow-[4px_4px_0px_0px_rgba(180,83,9,0.3)]">
+            <div class="flex items-center justify-between mb-2 flex-wrap gap-2">
+              <h3 class="text-lg font-black text-white uppercase tracking-tight">Ongoing Maintenance</h3>
+              <span class="text-xs font-bold bg-amber-900 text-amber-300 px-2 py-1 border border-amber-800">Months 3–30+</span>
+            </div>
+            <p class="text-slate-400 text-sm leading-relaxed">Regular site visits for fertilizer applications, weed management, pruning, pest monitoring, and GAP record-keeping. You receive field reports after each visit so you always know the state of your estate.</p>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="flex gap-6 items-start relative">
+          <div class="w-16 h-16 bg-green-700 border-2 border-green-900 flex items-center justify-center flex-shrink-0 font-black text-white text-lg z-10">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+          </div>
+          <div class="bg-green-900 border border-green-700 p-6 flex-1 shadow-[4px_4px_0px_0px_rgba(21,128,61,0.3)]">
+            <div class="flex items-center justify-between mb-2 flex-wrap gap-2">
+              <h3 class="text-lg font-black text-green-300 uppercase tracking-tight">First Harvest &amp; GAP Certificate</h3>
+              <span class="text-xs font-bold bg-green-800 text-green-300 px-2 py-1 border border-green-700">Year 2–3</span>
+            </div>
+            <p class="text-green-400 text-sm leading-relaxed">Your estate reaches commercial harvest maturity. With GAP documentation in place, your product is traceable, compliant with SLS 81:2021, and positioned for premium local or export buyers.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE CALCULATOR -->
+  <section id="quote" class="py-16 md:py-24 bg-slate-50 border-b-2 border-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12 text-center">
+        <span class="text-xs font-black uppercase tracking-widest text-amber-700 block mb-3">Get Started</span>
+        <h2 class="text-3xl md:text-4xl font-black text-slate-900 uppercase tracking-tight">Estimate Your Project</h2>
+        <p class="text-slate-600 font-medium mt-3 max-w-xl mx-auto">Use the estimator below to get a ballpark figure, then contact us directly for a precise quote after a site visit.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+
+        <!-- Calculator -->
+        <div class="lg:col-span-3 bg-white border-2 border-slate-900 p-8 shadow-[8px_8px_0px_0px_rgba(180,83,9,1)]">
+          <h3 class="text-xl font-black text-slate-900 uppercase tracking-tight mb-6 pb-4 border-b-2 border-slate-100">Project Estimator</h3>
+
+          <!-- Service selector as visual cards -->
+          <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Select Service</p>
+          <div class="grid grid-cols-2 gap-3 mb-6" id="service-selector">
+            <button onclick="selectService('clearing', 45000, this)" class="service-calc-btn selected text-left p-3 border-2 border-amber-700 bg-amber-50">
+              <span class="block text-xs font-black uppercase tracking-wider text-amber-700">Land Development</span>
+              <span class="block text-xs text-slate-500 mt-0.5 font-medium">Clearing + drains + holes</span>
+              <span class="block text-sm font-black text-slate-900 mt-2">Rs. 45,000 / acre</span>
+            </button>
+            <button onclick="selectService('planting', 22000, this)" class="service-calc-btn text-left p-3 border-2 border-slate-300 bg-white hover:border-slate-500">
+              <span class="block text-xs font-black uppercase tracking-wider text-slate-600">Planting</span>
+              <span class="block text-xs text-slate-500 mt-0.5 font-medium">Supply + field establishment</span>
+              <span class="block text-sm font-black text-slate-900 mt-2">Rs. 22,000 / acre</span>
+            </button>
+            <button onclick="selectService('maintenance', 25000, this)" class="service-calc-btn text-left p-3 border-2 border-slate-300 bg-white hover:border-slate-500">
+              <span class="block text-xs font-black uppercase tracking-wider text-slate-600">Maintenance</span>
+              <span class="block text-xs text-slate-500 mt-0.5 font-medium">Annual field management</span>
+              <span class="block text-sm font-black text-slate-900 mt-2">Rs. 25,000 / acre / yr</span>
+            </button>
+            <button onclick="selectService('full', 92000, this)" class="service-calc-btn text-left p-3 border-2 border-slate-300 bg-white hover:border-slate-500">
+              <span class="block text-xs font-black uppercase tracking-wider text-slate-600">Full Package</span>
+              <span class="block text-xs text-slate-500 mt-0.5 font-medium">All 3 services bundled</span>
+              <span class="block text-sm font-black text-slate-900 mt-2">Rs. 92,000 / acre</span>
+            </button>
+          </div>
+
+          <!-- Terrain -->
+          <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Terrain Type</p>
+          <div class="grid grid-cols-3 gap-3 mb-6" id="terrain-selector">
+            <button onclick="selectTerrain(1.0, this)" class="terrain-calc-btn selected text-center p-3 border-2 border-amber-700 bg-amber-50">
+              <span class="block text-lg mb-1">🌾</span>
+              <span class="block text-xs font-black uppercase text-amber-700">Flat</span>
+              <span class="block text-xs text-slate-500 font-medium">Standard</span>
+            </button>
+            <button onclick="selectTerrain(1.2, this)" class="terrain-calc-btn text-center p-3 border-2 border-slate-300 bg-white hover:border-slate-500">
+              <span class="block text-lg mb-1">⛰️</span>
+              <span class="block text-xs font-black uppercase text-slate-600">Sloped</span>
+              <span class="block text-xs text-slate-500 font-medium">+20%</span>
+            </button>
+            <button onclick="selectTerrain(1.5, this)" class="terrain-calc-btn text-center p-3 border-2 border-slate-300 bg-white hover:border-slate-500">
+              <span class="block text-lg mb-1">🌴</span>
+              <span class="block text-xs font-black uppercase text-slate-600">Jungle</span>
+              <span class="block text-xs text-slate-500 font-medium">+50%</span>
+            </button>
+          </div>
+
+          <!-- Acreage slider -->
+          <div class="mb-6">
+            <div class="flex justify-between items-center mb-3">
+              <p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Estate Size</p>
+              <span class="text-2xl font-black text-amber-700" id="acreage-display">5.0 Acres</span>
+            </div>
+            <input type="range" id="acreage-slider" min="0.5" max="50" step="0.5" value="5" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-amber-700" oninput="calculateQuote()">
+            <div class="flex justify-between text-xs text-slate-400 mt-1 font-medium">
+              <span>0.5 Ac</span><span>25 Ac</span><span>50 Ac</span>
+            </div>
+          </div>
+
+          <!-- Result -->
+          <div class="bg-slate-900 p-6 border-2 border-slate-900 text-center">
+            <span class="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Estimated Project Value</span>
+            <span class="text-4xl md:text-5xl font-black text-white tracking-tight">LKR <span id="total-cost" class="text-amber-500">225,000</span></span>
+            <p class="text-xs text-slate-500 mt-2">*Indicative only. Final quote after physical site inspection.</p>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="lg:col-span-2 bg-slate-900 p-8 border-2 border-slate-900 shadow-[8px_8px_0px_0px_rgba(180,83,9,1)]">
+          <h3 class="text-xl font-black text-white uppercase tracking-tight mb-2">Request a Site Visit</h3>
+          <p class="text-slate-400 text-sm mb-6 leading-relaxed">Your estimate is sent directly to our team on WhatsApp. We typically respond within a few hours to schedule a free site inspection.</p>
+
+          <div class="space-y-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Your Name / Estate Name</label>
+              <input type="text" id="client-name" placeholder="e.g. Sarath Perera / Perera Estate" class="w-full bg-slate-800 border-2 border-slate-700 text-white p-3 focus:outline-none focus:border-amber-500 text-sm">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">District</label>
+              <input type="text" id="client-district" placeholder="e.g. Matara, Galle, Kalutara" class="w-full bg-slate-800 border-2 border-slate-700 text-white p-3 focus:outline-none focus:border-amber-500 text-sm">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Phone Number</label>
+              <input type="tel" id="client-phone" placeholder="07X XXX XXXX" class="w-full bg-slate-800 border-2 border-slate-700 text-white p-3 focus:outline-none focus:border-amber-500 text-sm">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Additional Notes (optional)</label>
+              <textarea id="client-notes" rows="3" placeholder="e.g. land is currently jungle / ex-rubber / near river..." class="w-full bg-slate-800 border-2 border-slate-700 text-white p-3 focus:outline-none focus:border-amber-500 text-sm resize-none"></textarea>
+            </div>
+            <button id="dispatch-btn" onclick="dispatchQuote()" class="w-full bg-amber-700 hover:bg-amber-600 text-white font-black uppercase tracking-widest py-4 border-2 border-slate-900 transition-all duration-200 flex justify-center items-center gap-3 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.1)] hover:translate-x-[2px] hover:translate-y-[2px]">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.129.332.202.043.073.043.423-.101.827z"/></svg>
+              Send via WhatsApp
+            </button>
+            <p class="text-xs text-slate-500 text-center">Or call us directly: <a href="tel:0777926271" class="text-amber-500 hover:text-amber-400 font-bold">077 792 6271</a></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-white pt-16 pb-8 border-t-4 border-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div class="md:col-span-2 space-y-4">
+          <a href="index.html" class="text-2xl font-extrabold text-slate-900 tracking-tight uppercase block">
+            Cinnagrow <span class="text-amber-700">Solutions</span>
+          </a>
+          <p class="text-sm text-slate-600 font-medium max-w-sm leading-relaxed">
+            Pioneering the future of Ceylon Cinnamon. We combine high-yield crop propagation with precise, eco-friendly land engineering to build sustainable agricultural wealth.
+          </p>
+          <div class="inline-block px-3 py-1 bg-slate-100 border border-slate-300 text-xs font-bold text-slate-500 uppercase tracking-wider">
+            Cinnagrow Solutions (Pvt) Ltd.
+          </div>
+        </div>
+        <div class="space-y-4">
+          <h4 class="text-sm font-black text-slate-900 uppercase tracking-widest mb-4">Platform</h4>
+          <ul class="space-y-2">
+            <li><a href="services.html" class="text-sm font-medium text-slate-600 hover:text-amber-700 transition-colors">Field Services</a></li>
+            <li><a href="shop.html" class="text-sm font-medium text-slate-600 hover:text-amber-700 transition-colors">Order Plants &amp; Seeds</a></li>
+            <li><a href="education.html" class="text-sm font-medium text-slate-600 hover:text-amber-700 transition-colors">Cultivation Hub</a></li>
+            <li><a href="impact.html" class="text-sm font-medium text-slate-600 hover:text-amber-700 transition-colors">Our Impact</a></li>
+          </ul>
+        </div>
+        <div class="space-y-4">
+          <h4 class="text-sm font-black text-slate-900 uppercase tracking-widest mb-4">Connect</h4>
+          <ul class="space-y-3">
+            <li class="text-sm font-medium text-slate-600">
+              <strong class="text-slate-900">Corporate Office:</strong><br/>
+              Cinnagrow Solutions (Pvt) Ltd,<br/>
+              2nd Lane, Wanaguru Mawatha, Athurugiriya.
+            </li>
+            <li class="text-sm font-medium text-slate-600">
+              <strong class="text-slate-900">Registered Estate:</strong><br/>
+              10/24, Sisilasa, Meda Mawatha,<br/>
+              Jayasooriya Watta, Walasmulla.
+            </li>
+            <li class="text-sm font-medium text-slate-600 pt-2 border-t border-slate-200">
+              <a href="tel:0777926271" class="hover:text-amber-700 transition-colors">077 792 6271</a> |
+              <a href="tel:0718551848" class="hover:text-amber-700 transition-colors">071 855 1848</a>
+            </li>
+            <li class="text-sm font-medium text-slate-600">
+              <a href="mailto:growcinnamon@gmail.com" class="hover:text-amber-700 transition-colors">growcinnamon@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-8 border-t-2 border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-xs font-medium text-slate-500">&copy; 2026 Cinnagrow Solutions (Pvt) Ltd. All rights reserved.</p>
+        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Engineering Sustainable Growth</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/94777926271?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20Cinnagrow%20Services." target="_blank" class="whatsapp-float whatsapp-pulse" aria-label="Chat on WhatsApp">
+    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.129.332.202.043.073.043.423-.101.827z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.097.542 4.07 1.49 5.788L0 24l6.396-1.473A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.893 0-3.668-.524-5.188-1.433l-3.637.837.879-3.536A9.958 9.958 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+    </svg>
+  </a>
+
+  <script>
+    // Tab switching
+    let currentServiceRate = 45000;
+    let currentTerrainMultiplier = 1.0;
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.service-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.service-tab').forEach(t => {
+        t.classList.remove('active');
+        t.classList.add('bg-white', 'text-slate-900');
+        t.classList.remove('bg-amber-800', 'text-white');
+      });
+      document.getElementById('panel-' + tabId).classList.add('active');
+      const activeBtn = document.querySelector(`[data-tab="${tabId}"]`);
+      activeBtn.classList.add('active', 'bg-amber-800', 'text-white');
+      activeBtn.classList.remove('bg-white', 'text-slate-900');
+    }
+
+    // Calculator
+    function selectService(key, rate, btn) {
+      currentServiceRate = rate;
+      document.querySelectorAll('.service-calc-btn').forEach(b => {
+        b.classList.remove('selected', 'border-amber-700', 'bg-amber-50');
+        b.classList.add('border-slate-300', 'bg-white');
+      });
+      btn.classList.add('selected', 'border-amber-700', 'bg-amber-50');
+      btn.classList.remove('border-slate-300', 'bg-white');
+      calculateQuote();
+    }
+
+    function selectTerrain(multiplier, btn) {
+      currentTerrainMultiplier = multiplier;
+      document.querySelectorAll('.terrain-calc-btn').forEach(b => {
+        b.classList.remove('selected', 'border-amber-700', 'bg-amber-50');
+        b.classList.add('border-slate-300', 'bg-white');
+      });
+      btn.classList.add('selected', 'border-amber-700', 'bg-amber-50');
+      btn.classList.remove('border-slate-300', 'bg-white');
+      calculateQuote();
+    }
+
+    function calculateQuote() {
+      const acres = parseFloat(document.getElementById('acreage-slider').value);
+      document.getElementById('acreage-display').textContent = acres.toFixed(1) + ' Acres';
+      const total = currentServiceRate * acres * currentTerrainMultiplier;
+      document.getElementById('total-cost').textContent = Math.round(total).toLocaleString('en-LK');
+    }
+
+    function dispatchQuote() {
+      const name = document.getElementById('client-name').value.trim();
+      const district = document.getElementById('client-district').value.trim();
+      const phone = document.getElementById('client-phone').value.trim();
+      const notes = document.getElementById('client-notes').value.trim();
+
+      if (!name || !district) {
+        alert('Please enter your name and district before sending.');
+        return;
+      }
+
+      const acres = document.getElementById('acreage-slider').value;
+      const total = document.getElementById('total-cost').textContent;
+
+      const serviceLabels = { clearing: 'Land Development', planting: 'Planting', maintenance: 'Maintenance', full: 'Full Package' };
+      const terrainLabels = { 1.0: 'Flat / Standard', 1.2: 'Sloped / Hilly', 1.5: 'Dense Jungle' };
+
+      const selectedServiceBtn = document.querySelector('.service-calc-btn.selected span:first-child');
+      const selectedTerrainBtn = document.querySelector('.terrain-calc-btn.selected span:nth-child(2)');
+
+      const msg = `*SERVICE ENQUIRY | Cinnagrow Solutions*
+
+Hello, I am enquiring about your land services.
+
+*My Details:*
+• Name / Estate: ${name}
+• District: ${district}
+• Phone: ${phone || 'Not provided'}
+
+*Project Estimate:*
+• Service: ${selectedServiceBtn ? selectedServiceBtn.textContent : 'See estimate'}
+• Terrain: ${selectedTerrainBtn ? selectedTerrainBtn.textContent : 'See estimate'}
+• Land Size: ${acres} Acres
+• Estimated Value: LKR ${total}
+
+${notes ? `*Additional Notes:*\n${notes}` : ''}
+
+Please advise on availability for a free site inspection.`;
+
+      window.open(`https://wa.me/94777926271?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+    // Init
+    calculateQuote();
+  </script>
+</body>
+</html>
