@@ -40,33 +40,69 @@
 </head>
 <body class="antialiased selection:bg-[#A5790A] selection:text-white">
 
-    <!-- NAVIGATION BAR -->
-    <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-[#303202]/80 backdrop-blur-xl border-b border-[#899265]/20">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <!-- Logo -->
-                <div class="flex-shrink-0">
-                    <a href="#" class="flex items-center gap-3">
-                        <img src="GSIcon.png" alt="growcinnamon.lk Logo" class="h-12 w-auto rounded-md shadow-[0_0_15px_rgba(165,121,10,0.3)]">
-                    </a>
-                </div>
-                <!-- Desktop Menu -->
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#hero" class="text-white hover:text-[#A5790A] transition px-3 py-2 text-sm font-medium">Platform</a>
-                        <a href="#impact" class="text-gray-300 hover:text-[#A5790A] transition px-3 py-2 text-sm font-medium">Impact</a>
-                        <a href="#framework" class="text-gray-300 hover:text-[#A5790A] transition px-3 py-2 text-sm font-medium">Framework</a>
-                    </div>
-                </div>
-                <!-- CTA -->
-                <div class="hidden md:block">
-                    <a href="#contact" class="px-6 py-2.5 rounded-lg text-sm font-bold text-white bg-gradient-to-r from-[#A5790A] to-[#954806] hover:scale-105 transition shadow-[0_0_20px_rgba(165,121,10,0.3)]">
-                        Partner With Us
-                    </a>
-                </div>
-            </div>
+    <!-- Navigation Header -->
+  <header class="bg-white border-b-2 border-[#303202] sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        
+        <!-- Brand Logo Integration -->
+        <div class="flex-shrink-0 flex items-center">
+          <a href="index.html" class="block">
+            <img src="GSIcon.png" alt="growcinnamon.lk" class="h-14 w-auto object-contain">
+          </a>
         </div>
-    </nav>
+
+        <nav class="hidden md:flex space-x-8">
+          <a href="index.html" class="text-[#303202] font-bold hover:text-[#954806] transition-colors">Home</a>
+          <a href="services.html" class="text-[#303202] font-bold hover:text-[#954806] transition-colors">Services</a>
+          <a href="shop.html" class="text-[#303202] font-bold hover:text-[#954806] transition-colors">Shop</a>
+          <a href="education.html" class="text-[#303202] font-bold hover:text-[#954806] transition-colors">Education</a>
+          <a href="impact.html" class="text-[#954806] font-bold transition-colors border-b-2 border-[#954806]">Our Impact</a>
+        </nav>
+        
+        <div class="hidden md:flex items-center">
+    <a href="services.html#quote"
+       class="inline-flex items-center justify-center
+              px-8 py-4
+              rounded-full
+              border border-[#9FE6C3]
+              bg-white/70
+              backdrop-blur-md
+              text-[#303202]
+              font-bold
+              transition-all duration-300
+              hover:bg-white
+              hover:shadow-lg
+              hover:-translate-y-1">
+
+        Get Consultation
+
+    </a>
+</div>
+        
+        <div class="md:hidden flex items-center">
+          <button type="button" class="text-[#303202] hover:text-[#954806] focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b-2 border-[#303202]">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="index.html" class="block px-3 py-2 text-[#303202] font-bold">Home</a>
+        <a href="services.html" class="block px-3 py-2 text-[#303202] font-bold hover:text-[#954806]">Services</a>
+        <a href="shop.html" class="block px-3 py-2 text-[#303202] font-bold hover:text-[#954806]">Shop</a>
+        <a href="education.html" class="block px-3 py-2 text-[#303202] font-bold hover:text-[#954806]">Education</a>
+        <a href="impact.html" class="block px-3 py-2 text-[#954806] font-bold bg-slate-50 border-l-4 border-[#954806]">Our Impact</a>
+        <a href="services.html#quote" class="block px-3 py-2 mt-4 text-center bg-[#954806] text-white font-bold border-2 border-[#303202] shadow-[4px_4px_0px_0px_#303202]">Get a Quote</a>
+      </div>
+    </div>
+  </header>
+
 
     <!-- HERO SECTION -->
     <section id="hero" class="relative min-h-screen overflow-hidden bg-[#303202] pt-20">
